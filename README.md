@@ -25,8 +25,8 @@ CONFIGURATION CHEAT SHEET FOR BASIC PRISMA SETUP
 5. In the package.json file, under "scripts", add the following: "start": "nodemon index.js".
 6. Install Prisma using the following command: npm install prisma --save-dev.
 7. Initialize Prisma with the command: npx prisma init. This command installs the schema.prisma file and the .env file.
-8. Use the link to configure the .env and schema.prisma according to MySQL: Prisma MySQL Configuration.
-9. Create your first database: Prisma Schema Overview.
+8. Use the link to configure the .env and schema.prisma according to MySQL: Prisma MySQL Configuration. https://www.prisma.io/docs/orm/overview/databases/mysql
+9. Create your first database: Prisma Schema Overview. https://www.prisma.io/docs/orm/prisma-schema/overview
 10. Migrate your first database using the command: npx prisma migrate dev (only for development).
 11. If you want to change the table name (in case you don't like it), use the following syntax in the schema for the table to be changed: @@map("newtablename").
 12. If you want to insert data into tables, two libraries are needed: npm i @prisma/client body-parser for data and request handling.
