@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+//EN ESTE ARCHIVO SE HACE LAS CONFIGURACIONES DE LAS BASES DE DATOS Y MODELOS
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+//nuestro primer enum, en este caso seria para especificar dos estados de un elemento
+enum EstadoArticulo {
+  BORRADOR
+  PUBLICADO
+}
+// creamos nuestra primera base de datos
+model Articulo {
+  id Int @id @default(autoincrement()) //entero autoincrementa
+  titulo String
+  contenido String
+  estado EstadoArticulo
+  creadoEn DateTime @default(now()) //funcion en prisma que coloca la fecha actual
+  actualizadoEn DateTime @updatedAt
+
+  @@map("articulos")
+}
